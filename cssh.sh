@@ -1,3 +1,8 @@
+
+if [ ! -f cluster-def.sh ]; then
+  echo "ERROR: missing 'cluster-def.sh' file"
+  exit 1
+fi
 source ./cluster-def.sh
 
 node=$1
@@ -11,7 +16,7 @@ elif [ "$node" == "node1-1" ]; then
 elif [ "$node" == "node2-1" ]; then
   ssh -i $key2 $ssh_n2
 else
-  echo "YIKES!!"
+  echo "ERROR: invalid parameter for node name"
   exit 1
 fi
 

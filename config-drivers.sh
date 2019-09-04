@@ -1,6 +1,9 @@
 
-
-source ./cluster-def.sh 
+if [ ! -f cluster-def.sh ]; then
+  echo "ERROR: missing 'cluster-def.sh' file"
+  exit 1
+fi
+source ./cluster-def.sh
 
 ./my-driver.sh ./cluster-def.sh driver1-1 $key1 $ssh_d1
 ./my-driver.sh ./cluster-def.sh driver2-1 $key2 $ssh_d2
