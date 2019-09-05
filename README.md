@@ -1,4 +1,4 @@
-# lmm-config
+# nimoy - is the driver of pgspock
 
 ## configure the template
 ```
