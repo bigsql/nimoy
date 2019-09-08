@@ -1,4 +1,5 @@
-# nimoy - is the driver of pgspock
+# nimoy - is the driver for setting up the aws multi-region
+#   BenchmarkSQL testing of the pglogical2 fork, pgspock2
 
 ## configure the template
 ```
