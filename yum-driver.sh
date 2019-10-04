@@ -27,7 +27,7 @@ EOF
 
 sudo yum update -y 
 sudo yum install -y net-tools wget git java-1.8.0-openjdk java-1.8.0-openjdk-devel python-pip
-sudo pip install pssh
+pip install pssh --user
 
 cd $HOME
 rm -rf test
@@ -36,8 +36,6 @@ mkdir test/data
 cd test
 git clone https://github.com/bigsql/bigsql2
 git clone https://github.com/bigsql/nimoy
-
-
 
 cd $HOME
 ANT=apache-ant-1.9.14-bin
@@ -82,7 +80,7 @@ chmod 600 ~/.pgpass
 cd $HOME
 if [ ! -f ~/.ssh/id_rsa.pub ]; then
   echo ""
-  echo "###### running ssh-keygen (hit enter a few time please)"
+  echo "###### running ssh-keygen (hit <enter> a few times)"
   ssh-keygen -t rsa
 fi
 
