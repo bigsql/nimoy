@@ -1,11 +1,5 @@
 
-1.) Make sure pssh is installed on this driver node
-
-2.) Make sure that 'node1' & 'node2' are defined in
-    /etc/hosts, can communicate via psql between them, and
-    are fully reachable from passwordless ssh
-
-3.) refresh-bigsql.sh
+1.) init.sh; refresh-bigsql.sh
      - Make sure each node is clean and ready for bigsql 'remove-bigsql.sh'
      - 'install-bigsql.sh' to install bigsql on each node
      - run 'setup.sh' to do following on each node using pssh;
