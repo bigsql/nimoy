@@ -16,7 +16,7 @@ if [ ! "$1" == "$DRIVER1" ] && [ ! "$1" == "$DRIVER2" ]; then
 fi
 
 DRIVER=$1
-echo '$DRIVER' | sudo tee -a /etc/hostname
+echo $DRIVER | sudo tee -a /etc/hostname
 sudo hostnamectl set-hostname $DRIVER
 sudo sh -c " \
 cat << EOF >> /etc/hosts
@@ -25,6 +25,7 @@ $NODE2_IP  $NODE2
 EOF
 "
 
+sudo yum update -y 
 sudo yum install -y net-tools wget git java-1.8.0-openjdk java-1.8.0-openjdk-devel python-pip
 sudo pip install pssh
 
@@ -48,6 +49,7 @@ rm $ANT.tar.gz
 echo ""
 echo "###### replacing ~/.bashrc"
 cat << 'EOF' > ~/.bashrc 
+. /etc/bashrc
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
 
@@ -78,8 +80,9 @@ EOF
 chmod 600 ~/.pgpass
 
 cd $HOME
-if [ ! -d ~/.ssh ]; then
-  echo "Please hit ENTER a couple of time :-)"
+if [ ! -f ~/.ssh/id_rsa.pub ]; then
+  echo ""
+  echo "###### running ssh-keygen (hit enter a few time please)"
   ssh-keygen -t rsa
 fi
 
