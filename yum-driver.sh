@@ -25,40 +25,36 @@ $NODE2_IP  $NODE2
 EOF
 "
 
+sudo yum install -y net-tools wget git java-1.8.0-openjdk java-1.8.0-openjdk-devel python-pip
+sudo pip install pssh
+
 cd $HOME
-sudo yum install -y git
+rm -rf test
 mkdir test
 mkdir test/data
 cd test
 git clone https://github.com/bigsql/bigsql2
+git clone https://github.com/bigsql/nimoy
 
-sudo yum install -y net-tools zip unix2dos wget git python-setuptools bzip2 pbzip2 awscli java-1.8.0-openjdk java-1.8.0-openjdk-devel openssh-server python-pip
 
-#sudo pip install --upgrade pip
-sudo pip install pssh
-
-git config --global user.email "denisl@oscg-partners.com"
-git config --global user.name  "denis lussier"
-git config credential.helper store
-git config --global credential.helper "cache --timeout 7200"
 
 cd $HOME
 ANT=apache-ant-1.9.14-bin
 rm -f $ANT.tar.gz
-wget http://mirror.olnevhost.net/pub/apache//ant/binaries/$ANT.tar.gz
+wget http://mirror.olnevhost.net/pub/apache/ant/binaries/$ANT.tar.gz
 tar xf $ANT.tar.gz
 rm $ANT.tar.gz
 
 echo ""
-echo "###### appending ~/.bashrc"
-cat << 'EOF' >> ~/.bashrc 
+echo "###### replacing ~/.bashrc"
+cat << 'EOF' > ~/.bashrc 
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
 
 export ANT_HOME=$HOME/apache-ant-1.9.14
 export PATH=$ANT_HOME/bin:$PATH
 
-export RMT=$HOME/test/bigsql/lmm/remote
+export RMT=$HOME/test/nimoy/remote
 EOF
 
 cd $HOME
@@ -72,6 +68,7 @@ fi
 
 echo ""
 echo "###### writing ~/.pgpass"
+rm -rf ~/.pgpass
 cat << EOF >> ~/.pgpass
 $NODE1:5432:*:postgres:password
 $NODE1_IP:5432:*:postgres:password
@@ -81,7 +78,8 @@ EOF
 chmod 600 ~/.pgpass
 
 cd $HOME
-ssh-keygen -t rsa
-echo "## append this key in server ~/.ssh/authorized_keys ##"
-cat ~/.ssh/id_rsa.pub
+if [ ! -d ~/.ssh ]; then
+  echo "Please hit ENTER a couple of time :-)"
+  ssh-keygen -t rsa
+fi
 

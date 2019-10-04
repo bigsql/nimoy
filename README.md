@@ -17,7 +17,7 @@ $ ./config-drivers.sh
 
 ## configure the two pg servers hostname's
 ```
-$ ./configure-nodes.sh
+$ ./config-nodes.sh
 ```
 
 ## log into driver1-1 and get started

@@ -25,7 +25,7 @@ echoCmd "scp -i $pem yum-driver.sh $vm:."
 cmd="chmod 755 ~/*.sh"
 echoCmd "ssh -i $pem -t $vm $cmd; ./yum-driver.sh $driver"
 
-echoCmd "scp -i $pem $env $vm:test/bigsql/lmm/remote/env.sh"
+echoCmd "scp -i $pem $env $vm:test/nimoy/remote/env.sh"
 
 exit 0
 
