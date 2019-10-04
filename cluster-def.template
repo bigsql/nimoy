@@ -9,13 +9,13 @@ apg=$BIGSQL/apg
 PG=$BIGSQL/$pgXX
 psql="$PG/bin/psql -U postgres"
 
-key1=luss-oregon-key.pem
+key1=
 ip_d1=
 ip_n1=
 ssh_d1=ec2-user@$ip_d1
 ssh_n1=ec2-user@$ip_n1
 
-key2=east2-dev-key.pem
+key2=
 ip_d2=
 ip_n2=
 ssh_d2=ec2-user@$ip_d2
