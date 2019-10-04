@@ -15,7 +15,9 @@ in the two regions
 $ ./config-drivers.sh
 ```
 
-## configure the two pg servers hostname's
+## Configure the two pg servers hostname's
+##   NOTE: don't forget you must open up port 5432 on these 2
+##         servers so they will be able to talk to each other
 ```
 $ ./config-nodes.sh
 ```
