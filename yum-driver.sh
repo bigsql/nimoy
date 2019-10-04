@@ -30,7 +30,7 @@ sudo yum install -y git
 mkdir test
 mkdir test/data
 cd test
-git clone https://github.com/bigsql/bigsql
+git clone https://github.com/bigsql/bigsql2
 
 sudo yum install -y net-tools zip unix2dos wget git python-setuptools bzip2 pbzip2 awscli java-1.8.0-openjdk java-1.8.0-openjdk-devel openssh-server python-pip
 
@@ -63,11 +63,11 @@ EOF
 
 cd $HOME
 if [ ! -d bigsql ]; then
-  python -c "$(curl -fsSL https://s3.amazonaws.com/pgcentral/install.py)"
+  python -c "$(curl -fsSL https://bigsql-download.s3.amazonaws.com/REPO/install.py)"
   cd bigsql
-  ./pgc install pg11
-  ./pgc start pg11 -y
-  ./pgc stop pg11
+  ./apg install pg11
+  ./apg start pg11 -y
+  ./apg stop pg11
 fi
 
 echo ""

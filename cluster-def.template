@@ -5,7 +5,7 @@ PSSH="pssh -i -h hosts"
 PSCP="pscp -h hosts"
 pgXX=pg11
 BIGSQL=/home/ec2-user/bigsql
-pgc=$BIGSQL/pgc
+apg=$BIGSQL/apg
 PG=$BIGSQL/$pgXX
 psql="$PG/bin/psql -U postgres"
 

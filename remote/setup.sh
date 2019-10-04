@@ -12,14 +12,14 @@ function echoCmd {
   fi
 }
 
-$PSSH "$pgc install $pgXX"
-$PSSH "$pgc start $pgXX -y -d demo"
+$PSSH "$apg install $pgXX"
+$PSSH "$apg start $pgXX -y -d demo"
 
-$PSSH "$pgc tune $pgXX"
+$PSSH "$apg tune $pgXX"
 
 echoCmd "$PSCP pg_hba.conf $PG/."
 
-$PSSH "$pgc install logical -d demo"
+$PSSH "$apg install pgspock-pg11 -d demo"
 
 echoCmd "$PSCP ../create-replication-role.sql $PG/."
 $PSSH "$psql -f $PG/create-replication-role.sql"

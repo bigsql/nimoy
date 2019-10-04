@@ -1,6 +1,6 @@
 PSSH="pssh -i -h hosts"
 
-cmd="bigsql/pgc stop"
+cmd="bigsql/apg stop"
 echo "# $cmd"
 $PSSH "$cmd"
 
