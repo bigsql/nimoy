@@ -21,6 +21,6 @@ echoCmd "$PSCP pg_hba.conf $PG/."
 
 $PSSH "$apg install pgspock-pg11 -d demo"
 
-echoCmd "$PSCP ../create-replication-role.sql $PG/."
+echoCmd "$PSCP create-replication-role.sql $PG/."
 $PSSH "$psql -f $PG/create-replication-role.sql"
 

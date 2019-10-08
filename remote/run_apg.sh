@@ -1,7 +1,7 @@
 source env.sh
 
 if [ $# == 1 ]; then
-  cmd="$pgc $1"
+  cmd="$apg $1"
   echo ""
   echo "# $cmd"
   echo ""

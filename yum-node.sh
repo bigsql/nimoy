@@ -19,5 +19,5 @@ NODE=$1
 echo '$NODE' | sudo tee -a /etc/hostname
 sudo hostnamectl set-hostname $NODE
 
-
+sudo yum update -y
 
