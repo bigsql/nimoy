@@ -26,10 +26,5 @@ $ ./config-nodes.sh
 ```
   $ ./cssh.sh driver1-1
   $ cd $RMT
-  $ ./init.sh
-  $ ./refresh-bigsql.sh
-  $ ./build-1.sh
-  $ ./dump-1.sh
-  $ ./bms-setup.sh
-  $ ./bms-runBemchmark.sh (from both driver nodes simulateneously)
+  $ cat README.md
 ```
