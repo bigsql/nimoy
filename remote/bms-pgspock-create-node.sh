@@ -3,7 +3,7 @@ source env.sh
 
 function add_table {
   table="public.bmsql_$1"
-  sql="select pglogical.replication_set_add_table('bmsql_set', '$table')"
+  sql="select pgspock.replication_set_add_table('bmsql_set', '$table')"
   echo ""
   echo "$sql"
   $psql -h $node -q demo -c "$sql"
@@ -20,12 +20,12 @@ node=$1
 echo ""
 
 $psql -h $node demo -c "SELECT
-  pglogical.create_node(
+  pgspock.create_node(
     node_name := '$node',
     dsn := 'host=$node port=5432 user=replication password=password dbname=demo')"
 
 $psql -h $node demo -c "SELECT
-  pglogical.create_replication_set('bmsql_set', true, true, true, true);"
+  pgspock.create_replication_set('bmsql_set', true, true, true, true);"
 
 add_table warehouse
 add_table item

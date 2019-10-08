@@ -8,11 +8,11 @@ CREATE TABLE public.t1 (
 --  (1, 'one'), (2, 'two'), (3, 'three');
 
 -- create node1
-SELECT pglogical.create_node(
+SELECT pgspock.create_node(
     node_name := 'node1',
     dsn := 'host=node1 port=5432 user=replication password=password dbname=demo'
 );
 
 -- add all tables in public schema to the default replication set.
-SELECT pglogical.replication_set_add_all_tables('default', ARRAY['public']);
+SELECT pgspock.replication_set_add_all_tables('default', ARRAY['public']);
 
