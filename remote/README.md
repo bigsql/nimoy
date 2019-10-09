@@ -21,21 +21,15 @@ T2) Demo multimaster working across nodes by explaining and then
 B1) run bms-build-1.sh
         bms-dump-1.sh
 
-B2) runBenchmark.sh from driver1 to get comfortable with calculating 45%
-         sustained rate on node1 standalone.
-
-B3) run bms-setup.sh to:
+B2) run bms-setup.sh to:
           bms-restore.sh node1
           bms-pgspock-create-node.sh node1
           bms-restore2.sh node2
           bms-pgspock-create-node.sh node2
           bms-subscribe-nodes.sh
 
-B4) bms-runBenchmark.sh on  to calibrate 40% utilization level on 
-    node1 running with pgspock replicating to node2.
+B3) run benchmarksql on node1 & node2 with calculated loads
 
-B5) run benchmarksql on node1 & node2 with level calculated from B4)
-
-B6) rinse & repeat for different size nodes
+B4) rinse & repeat for different size nodes
 
 
