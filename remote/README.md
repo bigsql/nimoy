@@ -1,5 +1,5 @@
 
-1.) init.sh; refresh-bigsql.sh
+1.) Run 'refresh-bigsql.sh' to start over on each database node.
      - Make sure each node is clean and ready for bigsql 'remove-bigsql.sh'
      - 'install-bigsql.sh' to install bigsql on each node
      - run 'setup.sh' to do following on each node using pssh;
