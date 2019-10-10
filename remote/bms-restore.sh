@@ -21,7 +21,7 @@ echo ""
 ls -sh $dump_file
 echo ""
 echo "$RESTORE"
-$PG/bin/$RESTORE
+~/bigsql/pg11/bin/$RESTORE
 rc=$?
 
 echo ""

@@ -36,7 +36,7 @@ fi
 
 echo ""
 echo "$DUMP"
-$PG/bin/$DUMP
+~/bigsql/pg11/bin/$DUMP
 rc=$?
 echo ""
 ls -sh $dumper
