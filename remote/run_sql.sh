@@ -1,6 +1,6 @@
 PSSH="pssh -i -h hosts"
 pgXX=pg11
-psql="/home/ec2-user/bigsql/$pgXX/bin/psql -U postgres -h localhost -p 5432 -c \"$1\" demo"
+psql="/db/bigsql/$pgXX/bin/psql -U postgres -h localhost -p 5432 -c \"$1\" demo"
 
 if [ $# == 1 ]; then
   echo ""
