@@ -57,6 +57,11 @@ export PATH=$ANT_HOME/bin:$PATH
 export RMT=$HOME/test/nimoy/remote
 EOF
 
+source .bashrc
+cd $RMT/benchmarksql
+ant clean
+ant
+
 cd $HOME
 if [ ! -d bigsql ]; then
   python -c "$(curl -fsSL https://bigsql-download.s3.amazonaws.com/REPO/install.py)"
