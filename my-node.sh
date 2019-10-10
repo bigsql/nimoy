@@ -1,4 +1,6 @@
 
+echo ""
+echo "####################### config $2 ##################"
 env=$1
 echo "1 env=$env"
 driver=$2

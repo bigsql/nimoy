@@ -21,3 +21,19 @@ sudo hostnamectl set-hostname $NODE
 
 sudo yum update -y
 
+echo " "
+echo "Ensure that /db exists on $NODE"
+if [ ! -d "/db" ]; then
+  echo "Creating /db"
+  sudo mkdir /db
+  sudo chmod 777 /db
+fi
+
+if [ -d "/db/bigsql" ]; then
+  echo "Echo stopping bigsql"
+  /db/bigsql/apg stop
+  sleep 2
+fi
+
+echo "Cleaning up /db"
+sudo rm -f /db/*
