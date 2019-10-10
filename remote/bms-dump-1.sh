@@ -9,6 +9,9 @@ else
   dump_file=dump.sql
 fi
 
+if [ ! -d $dump_dir ]; then
+  mkdir $dump_dir
+fi
 dumper=$dump_dir/$dump_file
 
 DUMP="pg_dump -U postgres -h node1-1 -v -d demo"
