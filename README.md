@@ -31,8 +31,8 @@ $ ./config-nodes.sh
   $ ./cssh.sh node1-1 & node2-1 (setup /db file system on 500GB EBS volume)
   $    sudo mkfs -t xfs /dev/nvme1n1
   $    sudo mkdir /db
-  $    sudo chmod 777 /db
   $    sudo mount /dev/nvme1n1 /db
+  $    sudo chmod 777 /db
        
        automatically mount the EBS volume after Reboot as per:
          https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html
