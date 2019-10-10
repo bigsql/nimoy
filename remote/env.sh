@@ -4,18 +4,18 @@ RUN=$this_dir/benchmarksql/run
 PSSH="pssh -i -h hosts"
 PSCP="pscp -h hosts"
 pgXX=pg11
-BIGSQL=/home/ec2-user/bigsql
+BIGSQL=/db/bigsql
 apg=$BIGSQL/apg
 PG=$BIGSQL/$pgXX
 psql="$PG/bin/psql -U postgres"
 
-DRIVER1=driver-wooly
-NODE1=wooly
-NODE1_IP=18.236.84.193
+DRIVER1=
+NODE1=
+NODE1_IP=
 
-DRIVER2=driver-mammoth
-NODE2=mammoth
-NODE2_IP=18.191.240.233
+DRIVER2=
+NODE2=
+NODE2_IP=
 
 dump_dir=/home/ec2-user/test/data
 

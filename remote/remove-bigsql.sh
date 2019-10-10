@@ -1,10 +1,10 @@
 PSSH="pssh -i -h hosts"
 
-cmd="bigsql/apg stop"
+cmd="/db/bigsql/apg stop"
 echo "# $cmd"
 $PSSH "$cmd"
 
-cmd="rm -rf bigsql"
+cmd="rm -rf /db/bigsql"
 echo "# $cmd"
 $PSSH "$cmd"
 

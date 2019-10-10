@@ -1,10 +1,10 @@
-dump_dir=/home/ec2-user/test/data
+dump_dir=/db/dump_dir
 this_dir=`pwd`
 RUN=$this_dir/benchmarksql/run
 PSSH="pssh -i -h hosts"
 PSCP="pscp -h hosts"
 pgXX=pg11
-BIGSQL=/home/ec2-user/bigsql
+BIGSQL=/db/bigsql
 apg=$BIGSQL/apg
 PG=$BIGSQL/$pgXX
 psql="$PG/bin/psql -U postgres"
