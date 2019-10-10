@@ -22,9 +22,13 @@ $ ./config-drivers.sh
 $ ./config-nodes.sh
 ```
 
-## log into driver1-1 and get started
+## ssh into the four servers to get thru the warnings and you should reboot the four servers
+##    to make sure the hostnames are all working
 ```
+  $ ./cssh.sh driver1-1, node1-1, driver2-1, node2-1 (hit <enter> for 1st time warning)
   $ ./cssh.sh driver1-1
-  $ cd $RMT
-  $ cat README.md
+  $   ssh node1-1 (hit <enter> for 1st time warning)
+  $   ssh node2-1 (hit <enter> for 1st time warning)
+  $   cd $RMT
+  $   cat README.md
 ```
