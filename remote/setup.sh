@@ -1,7 +1,5 @@
 source env.sh
 
-psql=~/bigsql/pg11/bin/psql
-
 function echoCmd {
   echo "# $1"
   $1
@@ -13,6 +11,9 @@ function echoCmd {
     exit $rc
   fi
 }
+
+echo ""
+echo "####### setup.sh ##################"
 
 $PSSH "$apg install $pgXX"
 $PSSH "$apg start $pgXX -y -d demo"
