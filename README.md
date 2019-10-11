@@ -26,15 +26,16 @@ $ ./config-nodes.sh
 ## on all four nodes, setup the EBS volume as /db 
 ```
   $ ./cssh.sh driver1-1, node1-1, driver2-1, node2-1 (hit <enter> for 1st time warning)
-  $    sudo mkfs -t xfs /dev/nvme1n1
-  $    sudo mkdir /db
-  $    sudo mount /dev/nvme1n1 /db
-  $    sudo chmod 777 /db
+
+     sudo mkfs -t ext4 /dev/nvme1n1
+     sudo mkdir /db
+     sudo mount /dev/nvme1n1 /db
+     sudo chmod 777 /db
        
        automatically mount the EBS volume after Reboot as per:
          https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html
 
-       sudo reboot
+     sudo reboot
 ```
 
 ## Now your ready to login into driver1-1 and get started
