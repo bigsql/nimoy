@@ -28,9 +28,12 @@ $ ./config-nodes.sh
   $ ./cssh.sh driver1-1, node1-1, driver2-1, node2-1 (hit <enter> for 1st time warning)
 
      sudo mkfs -t ext4 /dev/nvme1n1
-     sudo mkdir /db
+     if [ ! -d /db ]; then
+       sudo mkdir /db
+     fi
      sudo mount /dev/nvme1n1 /db
      sudo chmod 777 /db
+
        
        automatically mount the EBS volume after Reboot as per:
          https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html
