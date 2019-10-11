@@ -1,7 +1,7 @@
 
 source env.sh
 
-PSQL="$psql -h $NODE1 demo"
+PSQL="/home/ec2-user/bigsql/pg11/bin/psql -U postgres  -h $NODE1 demo"
 
 $PSQL -c "SELECT pgspock.create_subscription( \
     subscription_name := 'subscription2', \

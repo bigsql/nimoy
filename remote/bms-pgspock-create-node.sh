@@ -1,7 +1,7 @@
 
 source env.sh
 
-psql=~/bigsql/pg11/bin/psql
+psql="/home/ec2-user/bigsql/pg11/bin/psql -U postgres "
 
 function add_table {
   table="public.bmsql_$1"
