@@ -1,6 +1,8 @@
 
 source env.sh
 
+psql=~/bigsql/pg11/bin/psql
+
 function add_table {
   table="public.bmsql_$1"
   sql="select pgspock.replication_set_add_table('bmsql_set', '$table')"

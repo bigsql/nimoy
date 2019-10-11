@@ -1,5 +1,7 @@
 source env.sh
 
+psql=~/bigsql/pg11/bin/psql
+
 function echoCmd {
   echo "# $1"
   $1
