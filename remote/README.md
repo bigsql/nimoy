@@ -28,7 +28,7 @@ B2) run bms-setup.sh to:
           bms-pgspock-create-node.sh node2
           bms-subscribe-nodes.sh
 
-B3) run "bms-runBenchmarksql.sh" 
+B3) run "bms-runBenchmark.sh" 
 
 B4) rinse & repeat for different size nodes by varying the 
     nodeN-pg.properties file on driver1 & driver2 machines.
