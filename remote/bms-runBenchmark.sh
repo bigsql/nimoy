@@ -13,5 +13,7 @@ fi
 echo "##### runBenchmark from $this_host using $node_prop #######"
 
 cd benchmarksql/run
-
 ./runBenchmark.sh $node_prop
+cd ../..
+
+./bms-lagTimer.sh
