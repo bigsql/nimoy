@@ -27,11 +27,12 @@ $ ./config-nodes.sh
 ```
   $ ./cssh.sh driver1-1, node1-1, driver2-1, node2-1 (hit <enter> for 1st time warning)
 
-     sudo mkfs -t ext4 /dev/nvme1n1
+     device=/dev/nvme1n1
+     sudo mkfs -t ext4 $device
      if [ ! -d /db ]; then
        sudo mkdir /db
      fi
-     sudo mount /dev/nvme1n1 /db
+     sudo mount $device /db
      sudo chmod 777 /db
 
        

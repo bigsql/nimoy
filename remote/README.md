@@ -1,5 +1,7 @@
+# The process to run from driver1-1 instance
 
-1.) Run refresh-bigsql.sh to start over on each database node.
+1.) ssh to node1-1 and node2-1 to make sure passwordless ssh works without warnings
+2.) Run refresh-bigsql.sh to start over on each database node.
      - Make sure each node is clean and ready for bigsql remove-bigsql.sh
      - install-bigsql.sh to install bigsql on each node
      - run setup.sh to do following on each node using pssh;
