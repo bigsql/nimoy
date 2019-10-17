@@ -1,11 +1,11 @@
 source env.sh
 
-./run_sql.sh "select pgspock.drop_replication_set('bmsql_set', false)"
+./run_sql.sh "select $spock.drop_replication_set('bmsql_set', false)"
 
 $psql -h $NODE1 demo -c \
-    "select pgspock.drop_subscription('subscription2', false)"
+    "select $spock.drop_subscription('subscription2', false)"
 $psql -h $NODE2 demo -c \
-    "select pgspock.drop_subscription('subscription1', false)"
+    "select $spock.drop_subscription('subscription1', false)"
 
 ./run_sql.sh "drop table bmsql_config"
 

@@ -1,5 +1,0 @@
-
-CREATE TABLE public.t1 (
-  c1 INTEGER PRIMARY KEY,
-  c2 VARCHAR(10)
-);

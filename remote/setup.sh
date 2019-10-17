@@ -22,7 +22,7 @@ $PSSH "$apg tune $pgXX"
 
 echoCmd "$PSCP pg_hba.conf $PG/."
 
-$PSSH "$apg install pgspock-pg11 -d demo"
+$PSSH "$apg install $spock-pg11 -d demo"
 
 echoCmd "$PSCP create-replication-role.sql $PG/."
 $PSSH "$psql -f $PG/create-replication-role.sql"
