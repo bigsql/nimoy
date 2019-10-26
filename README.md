@@ -1,5 +1,4 @@
-# nimoy - is the driver for setting up the aws multi-region
-#   BenchmarkSQL testing of the pgspock
+# nimoy - AWS multi-region BenchmarkSQL testing of pgLogical/pgSpock
 
 ## configure the template
 ```
