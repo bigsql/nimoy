@@ -1,4 +1,4 @@
-# nimoy - AWS multi-region BenchmarkSQL testing of pgLogical/pgSpock
+# nimoy - AWS BenchmarkSQL testing of pgLogical/pgSpock
 
 ## configure the template
 ```
@@ -15,9 +15,10 @@ $ ./config-drivers.sh
 ```
 
 ## Configure the two pg servers hostname's
-##   NOTE: don't forget you must open up port 5432 on these 2
-##         servers so they will be able to talk to each other
-##         for replication & be reachable from the driver nodes
+
+NOTE: don't forget you must open up port 5432 on these 2
+      servers so they will be able to talk to each other
+      for replication & be reachable from the driver nodes
 ```
 $ ./config-nodes.sh
 ```
